@@ -1,0 +1,9 @@
+# Only the infrastructure, for running backend (mvn spring-boot:run) and frontend (npm start) locally.
+services:
+  db:
+    image: postgres:16-alpine
+    environment: { POSTGRES_DB: bookify, POSTGRES_USER: bookify, POSTGRES_PASSWORD: bookify }
+    ports: ["5432:5432"]
+  mailhog:
+    image: mailhog/mailhog
+    ports: ["1025:1025", "8025:8025"]
